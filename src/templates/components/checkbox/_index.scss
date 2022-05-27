@@ -1,6 +1,5 @@
 .checkbox {
   @include make-spacer('pl', 10);
-  @include make-spacer('pl', 13, sm);
   @include flex;
 
   position: relative;

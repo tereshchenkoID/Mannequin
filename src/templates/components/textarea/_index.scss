@@ -8,19 +8,19 @@
   width: 100%;
 
   &__input {
-    @include size(100%, 250px);
-    @include font-size(20px);
-
-    @include make-spacer('px', 4);
-    @include make-spacer('py', 5);
-    @include make-spacer('pl', 6, sm);
+    @include make-spacer('p', 4);
+    @include size(100%, 229px);
+    @include font-size(18px);
 
     display: block;
     background: rgba(255, 255, 255, 0.7);
     box-shadow: var(--default-box-shadow);
     border: 0;
     resize: none;
-    font-weight: var(--typography-bold);
+
+    @include media-breakpoint-up(sm) {
+      height: 175px;
+    }
 
     &:focus {
       outline: none;
@@ -28,12 +28,11 @@
   }
 
   &__placeholder {
+    @include font-size(14px, 16px);
     @include make-spacer('pl', 4);
-    @include make-spacer('pl', 6, sm);
-    @include font-size(18px, 16px);
 
     @include media-breakpoint-up(sm) {
-      @include font-size(20px, 27px);
+      @include font-size(18px, 20px);
 
       top: 28px;
     }
@@ -46,7 +45,7 @@
   }
 
   &__error {
-    @include make-spacer('px', 6);
+    @include make-spacer('px', 4);
     @include make-spacer('py', 3);
     @include font-size(14px);
 

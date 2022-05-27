@@ -6,20 +6,25 @@
 
 .header {
   @include make-spacer('pt', 4);
-  @include make-spacer('pt', 4, xm);
+  @include make-spacer('pt', 10, xm);
+  @include make-spacer('pt', 0, md);
 
-  min-height: 490px;
+  min-height: calc(618px - var(--navigation-height));
 
   @include media-breakpoint-up(sm) {
-    min-height: 576px;
+    min-height: calc(698px - var(--navigation-height));
   }
 
   @include media-breakpoint-up(md) {
-    min-height: 840px;
+    min-height: calc(835px - var(--navigation-height));
   }
 
   @include media-breakpoint-up(xl) {
-    min-height: 925px;
+    min-height: calc(987px - var(--navigation-height));
+  }
+
+  @include media-breakpoint-up(xxl) {
+    min-height: calc(1017px - var(--navigation-height));
   }
 
   .container {
@@ -52,19 +57,22 @@
   }
 
   .grid {
-    @include make-spacer('mt', 6, sm);
-
     @include media-breakpoint-up(sm) {
-      grid-template-columns: 1fr 305px;
+      grid-template-columns: 1fr 475px;
     }
 
     @include media-breakpoint-up(md) {
-      grid-template-columns: 1fr 500px;
+      grid-template-columns: 1fr 535px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      grid-template-columns: 1fr 620px;
     }
 
     @include media-breakpoint-up(xxl) {
-      grid-template-columns: 1fr 715px;
+      grid-template-columns: 1fr 764px;
     }
+
 
     display: grid;
   }
@@ -101,197 +109,154 @@
     }
   }
 
-  .image {
-    @include make-spacer('mr', -5);
-    @include make-spacer('mr', 0, sm);
-    @include make-spacer('mr', auto, xl);
+  .media {
+    @include flex(center);
+    @include size(400px);
 
-    @include make-spacer('mt', -12);
-    @include make-spacer('mt', -6, sm);
-    @include make-spacer('mt', 10, md);
-    @include make-spacer('mt', 0, xl);
+    @include media-breakpoint-up(sm) {
+      @include size(650px);
+    }
 
+    @include media-breakpoint-up(md) {
+      @include size(800px);
+    }
+
+    @include media-breakpoint-up(xl) {
+      @include size(922px);
+    }
+
+    @include make-spacer('mt', -18);
     @include make-spacer('ml', auto);
-    @include make-spacer('ml', -15, sm);
-    @include make-spacer('ml', 12, md);
-    @include make-spacer('ml', -8, xl);
+    @include make-spacer('mr', -30);
 
-    @include make-spacer('ml', 0, xxl);
+    @include make-spacer('mt', -8, sm);
+    @include make-spacer('mr', 0, sm);
 
-    @include size(250px, 392px);
+    @include make-spacer('mt', 14, md);
 
-    @include media-breakpoint-up(sm) {
-      @include size(380px, 595px);
-    }
+    @include make-spacer('mt', 6, xl);
 
-    @include media-breakpoint-up(md) {
-      @include size(500px, 780px);
-    }
 
-    @include media-breakpoint-up(xl) {
-      @include size(550px, 860px);
-    }
+    position: relative;
 
-    @include media-breakpoint-up(xxl) {
-      @include size(600px, 940px);
-    }
+    &__image {
+      @include make-spacer('mt', 2);
+      @include make-spacer('ml', -10);
 
-    overflow: hidden;
-  }
+      @include make-spacer('mt', 2, sm);
+      @include make-spacer('mt', 6, md);
 
-  .board {
-    @include flex($justify-content: space-between, $direction: column);
-    @include size(100px, 155px);
-
-    @include make-spacer('py', 3);
-    @include make-spacer('px', 3);
-    @include make-spacer('py', 4, sm);
-    @include make-spacer('px', 5, sm);
-
-    position: absolute;
-    right: 150px;
-    bottom: 40px;
-    border-radius: 10px;
-    background-color: var(--color-alt);
-    color: var(--color-white);
-
-    @include media-breakpoint-up(sm) {
-      @include size(140px, 215px);
-
-      right: 0;
-      bottom: 85px;
-      border-radius: 14px;
-    }
-
-    @include media-breakpoint-up(md) {
-      right: 45px;
-      bottom: 160px;
-    }
-
-    @include media-breakpoint-up(xxl) {
-      right: 220px;
-      bottom: 195px;
-    }
-
-    &__subtitle,
-    &__keyword {
-      @include font-size(9px);
+      @include size(263px, 328px);
 
       @include media-breakpoint-up(sm) {
-        @include font-size(12px);
-      }
-    }
-
-    &__subtitle {
-      @include make-spacer('mt', 1);
-      @include make-spacer('mb', auto);
-    }
-
-    &__keyword {
-      @include make-spacer('pb', 1);
-
-      font-weight: var(--typography-bold);
-      line-height: 1.5;
-    }
-  }
-
-  .circle {
-    @include size(655px);
-
-    position: absolute;
-    top: 50px;
-    right: -190px;
-
-    @include media-breakpoint-up(sm) {
-      @include size(755px);
-
-      top: -50px;
-    }
-
-    @include media-breakpoint-up(md) {
-      @include size(855px);
-
-      top: -40px;
-      right: -265px;
-    }
-
-    @include media-breakpoint-up(xl) {
-      top: -40px;
-      right: -165px;
-    }
-
-    @include media-breakpoint-up(xxl) {
-      @include size(955px);
-
-      top: 0;
-      right: -80px;
-    }
-
-    &__line {
-      @include media-breakpoint-up(xxl) {
-        display: block;
-      }
-
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border: 1px solid var(--color-white);
-      border-radius: 50%;
-
-      &--sm {
-        @include size(calc(100% - 140px));
-      }
-
-      &--lg {
-        @include size(100%);
-      }
-    }
-
-    &__icon {
-      @include flex(center, center);
-      @include size(25px);
-
-      @include media-breakpoint-up(sm) {
-        @include size(35px);
-
-        top: 15px;
-        left: 250px;
+        @include size(428px, 534px);
       }
 
       @include media-breakpoint-up(md) {
-        @include size(45px);
-
-        top: 120px;
-        left: 270px;
+        @include size(526px, 655px);
       }
 
       @include media-breakpoint-up(xl) {
-        left: 330px;
+        @include size(607px, 758px);
       }
 
       @include media-breakpoint-up(xxl) {
-        left: 452.5px;
-        top: -25px;
-        animation: circle 30s linear infinite;
+        @include size(600px, 940px);
       }
 
-      position: absolute;
-      left: 150px;
-      transform-origin: 50% 502.5px;
-      z-index: 2;
-      transform: rotate(0.1turn);
+      position: relative;
+      overflow: hidden;
 
-      svg {
-        transform: scale(1.1);
+      &::after {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(0deg, #F4F4F4 15%, rgba(244, 244, 244, 0) 100%);
+        height: 160px;
+        z-index: 1;
+        content: '';
+
+        @include media-breakpoint-up(sm) {
+          height: 260px;
+        }
+
+        @include media-breakpoint-up(md) {
+          height: 315px;
+        }
+
+        @include media-breakpoint-up(xl) {
+          height: 370px;
+        }
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: auto;
       }
     }
+
+    &__circle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(310.02deg, rgba(244, 244, 244, 0) 27.7%, #F4F4F4 77.82%);
+      border-radius: 50%;
+    }
   }
-}
 
-@keyframes circle {
+  .board {
+    position: absolute;
+    top: 50%;
+    left: -75px;
+    transform: translateY(-50%);
 
-  to {
-    transform: rotate(1turn);
+    @include media-breakpoint-up(sm) {
+      left: 80px;
+    }
+
+    @include media-breakpoint-up(md) {
+      left: 20px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      left: 10px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      left: -70px;
+    }
+
+    &__link {
+      @include size(20px);
+
+      position: absolute;
+      top: 50%;
+      right: 7px;
+      transform: translateY(-50%);
+
+      @include media-breakpoint-up(sm) {
+        @include size(24px);
+
+        right: 9px;
+      }
+
+      @include media-breakpoint-up(md) {
+        @include size(30px);
+
+        right: 11px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        @include size(34px);
+
+        right: 13px;
+      }
+    }
   }
 }

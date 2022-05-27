@@ -70,7 +70,7 @@
       span {
         @include make-spacer('mr', 2);
 
-        &:last-child {
+        &:nth-child(1) {
           color: var(--color-primary);
         }
       }
@@ -95,7 +95,7 @@
       }
 
       @include media-breakpoint-up(xl) {
-        max-width: 512px;
+        max-width: 365px;
       }
     }
   }

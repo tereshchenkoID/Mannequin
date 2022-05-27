@@ -1,54 +1,94 @@
 .board {
-  @include flex($justify-content: space-between, $direction: column);
-  @include size(100px, 155px);
+  @include flex($justify-content: center, $direction: column);
+  @include size(171px);
 
-  @include make-spacer('py', 3);
-  @include make-spacer('px', 3);
-  @include make-spacer('py', 4, sm);
-  @include make-spacer('px', 5, sm);
+  @include make-spacer('pr', 9);
+  @include make-spacer('pl', 5);
+  @include make-spacer('pr', 11, sm);
+  @include make-spacer('pl', 3, sm);
+  @include make-spacer('pr', 12, md);
+  @include make-spacer('pl', 4, md);
+  @include make-spacer('pl', 2, xl);
 
-  position: absolute;
-  right: 150px;
-  bottom: 40px;
-  border-radius: 10px;
+  border-radius: 50%;
   background-color: var(--color-alt);
   color: var(--color-white);
+  text-align: right;
 
   @include media-breakpoint-up(sm) {
-    @include size(140px, 215px);
-
-    //right: 0;
-    //bottom: 85px;
-    border-radius: 14px;
+    @include size(200px);
   }
-  //
-  //@include media-breakpoint-up(md) {
-  //  right: 45px;
-  //  bottom: 160px;
-  //}
-  //
-  //@include media-breakpoint-up(xxl) {
-  //  right: 220px;
-  //}
 
-  &__subtitle,
-  &__keyword {
-    @include font-size(9px);
+  @include media-breakpoint-up(md) {
+    @include size(250px);
+  }
+
+  &__link {
+    @include size(20px);
+
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    transform: translateY(-50%);
 
     @include media-breakpoint-up(sm) {
-      @include font-size(12px);
+      @include size(24px);
+
+      right: 9px;
+    }
+
+    @include media-breakpoint-up(md) {
+      @include size(30px);
+
+      right: 11px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      @include size(34px);
+
+      right: 13px;
+    }
+  }
+
+  &__subtitle,
+  &__text {
+
+    @include media-breakpoint-up(sm) {
+      transform: translateY(-12px);
     }
   }
 
   &__subtitle {
-    @include make-spacer('mt', 1);
-    @include make-spacer('mb', auto);
+    @include font-size(11px, 16px);
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(12px, 18px);
+    }
+
+    @include media-breakpoint-up(md) {
+      @include font-size(16px, 24px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include font-size(18px, 27px);
+    }
   }
 
-  &__keyword {
-    @include make-spacer('pb', 1);
+  &__text {
+    @include font-size(16px, 20px);
 
     font-weight: var(--typography-bold);
-    line-height: 1.5;
+
+    @include media-breakpoint-up(sm) {
+      @include font-size(20px, 24px);
+    }
+
+    @include media-breakpoint-up(md) {
+      @include font-size(25px, 30px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include font-size(30px, 36px);
+    }
   }
 }

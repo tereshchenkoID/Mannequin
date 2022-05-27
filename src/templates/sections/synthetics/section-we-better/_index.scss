@@ -29,7 +29,11 @@
       span {
         @include make-spacer('mr', 2);
 
-        &:nth-child(2) {
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+
+        &:nth-child(1) {
           color: var(--color-primary);
         }
       }

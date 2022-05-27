@@ -5,10 +5,10 @@ mixin section-header(title, type, image, text, board, color)
         .block
           h4.title= title
           .description
-            each item, c_index in text
+            each item in text
               p.text
                 each subitem, s_index in item.list
-                  if(c_index === 0 && s_index === 0)
+                  if(item.index === s_index)
                     strong= subitem
                   else
                     span= subitem
@@ -22,6 +22,3 @@ mixin section-header(title, type, image, text, board, color)
             +board
 
         +icon(type)(class=`icon--${color}`)
-        .circle
-          .circle__line.circle__line--sm
-          .circle__line.circle__line--lg

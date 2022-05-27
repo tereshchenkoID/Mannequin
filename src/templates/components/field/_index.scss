@@ -1,24 +1,22 @@
 .field {
-  @include size(100%, 70px);
+  @include size(100%, 55px);
 
   @include media-breakpoint-up(sm) {
-    @include size(100%, 80px);
+    @include size(100%, 70px);
   }
 
   position: relative;
 
   &__input {
     @include make-spacer('px', 4);
-    @include make-spacer('px', 6, sm);
     @include size(100%);
-    @include font-size(20px);
+    @include font-size(18px);
 
     display: block;
     background: rgba(255, 255, 255, 0.7);
     box-shadow: var(--default-box-shadow);
     border: 2px solid var(--color-light);
     border-radius: 10px;
-    font-weight: var(--typography-bold);
 
     &:focus {
       outline: none;
@@ -26,15 +24,15 @@
   }
 
   &__placeholder {
-    @include font-size(18px, 16px);
+    @include font-size(14px, 16px);
 
-    top: 25px;
+    top: 20px;
     left: 20px;
 
     @include media-breakpoint-up(sm) {
-      @include font-size(20px, 27px);
+      @include font-size(18px, 20px);
 
-      left: 30px;
+      top: 25px;
     }
 
     position: absolute;
@@ -43,7 +41,7 @@
   }
 
   &__error {
-    @include make-spacer('px', 6);
+    @include make-spacer('px', 4);
     @include font-size(14px);
 
     display: none;
@@ -65,14 +63,14 @@
     .field {
 
       &__input {
-        @include make-spacer('pt', 5);
+        @include make-spacer('pt', 4);
 
         outline: none;
         border-color: var(--color-text);
       }
 
       &__placeholder {
-        @include font-size(14px);
+        @include font-size(12px);
 
         transform: translateY(-10px);
       }

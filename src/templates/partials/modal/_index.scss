@@ -7,6 +7,26 @@
   left: 0;
   z-index: 12;
 
+  &--pink {
+
+    .modal {
+
+      &__wrapper {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+
+  &--blue {
+
+    .modal {
+
+      &__wrapper {
+        background-color: var(--color-secondary);
+      }
+    }
+  }
+
   &__wrapper {
     @include flex(center, flex-start);
     @include size(100%);
@@ -22,7 +42,6 @@
     position: relative;
     z-index: 1;
     overflow-y: auto;
-    background-color: #E072D2;
 
     &::before {
       position: absolute;

@@ -24,14 +24,20 @@ block content
   +nav(menu, 'stylist').nav--inner#nav
   main
     +section-header(
-      'Mannequin Stylist turnkey solution for your apparel eCommerce',
+      'Mannequin Stylist',
       3,
       [
         'stylist/header',
         'home/product-21',
         'home/product-22'
       ],
-      false,
+      [
+        {
+          list: [
+            'A turnkey solution for bundling and upselling your ecommerce apparel.'
+          ]
+        }
+      ],
       false,
       'blue'
     ).section--header#section-header
@@ -39,8 +45,11 @@ block content
     +section-benefits.section--benefits#section-benefits
     +section-integration.section--integration#section-integration
     +section-plan.section--plan#section-plan
-    +section-request([
-      "Let us show you the stunning",
-      "looks for YOUR website"
-    ]).section--request#section-feedback
-    +modal.js-modal
+    +section-request(
+      [
+        "We’re ready",
+        "if you are. "
+      ],
+      1
+    ).section--request#section-feedback
+    +modal.modal--blue.js-modal

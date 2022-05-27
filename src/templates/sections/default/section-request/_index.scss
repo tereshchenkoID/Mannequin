@@ -73,10 +73,11 @@
         @include make-spacer('mr', 2);
 
         display: inherit;
+      }
 
-        &:last-child {
-          color: var(--color-primary);
-        }
+      strong {
+        font-weight: inherit;
+        color: var(--color-primary);
       }
     }
 
@@ -89,7 +90,7 @@
     }
 
     .link {
-      @include make-spacer('mb', 18, md);
+      @include make-spacer('mb', 10, md);
       @include font-size(25px, 40px);
 
       @include media-breakpoint-up(sm) {

@@ -55,13 +55,13 @@
       }
 
       @include media-breakpoint-up(md) {
-        grid-template-columns: 40px 340px 55px 1fr;
-        column-gap: 45px;
+        grid-template-columns: 40px 340px 25px 1fr;
+        column-gap: 70px;
       }
 
       @include media-breakpoint-up(xl) {
-        grid-template-columns: 90px 340px 55px 1fr;
-        column-gap: 90px;
+        grid-template-columns: 90px 340px 25px 1fr;
+        column-gap: 100px;
       }
 
       &:nth-child(odd) {
@@ -209,11 +209,11 @@
         }
 
         @include media-breakpoint-up(xl) {
-          @include font-size(45px, 50px);
+          @include font-size(40px, 45px);
         }
 
         color: var(--color-dark);
-        font-weight: var(--typography-semibold);
+        font-weight: var(--typography-medium);
       }
 
       &:hover {

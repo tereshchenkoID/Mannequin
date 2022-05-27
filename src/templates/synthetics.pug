@@ -39,14 +39,10 @@ block content
       ],
       [
         {
+          index: 0,
           list: [
-            'Mannequin AI is a cutting-edge AI technology',
-            'that can create stunning images of photoshoot-grade full body digital people.'
-          ]
-        },
-        {
-          list: [
-            'The technology is ready (of course we keep working on improving it daily) and can be applied across a number of industries now.'
+            'Mannequin AI is a state of the art machine learning technology',
+            'that creates purely digital humans that look identical to real models wearing real apparel from real shoots.'
           ]
         }
       ],
@@ -58,8 +54,11 @@ block content
     +section-use-cases.section--use-cases#section-use-cases
     +section-process.section--process#section-process
     +section-near-future.section--near-future#section-near-future
-    +section-request([
+    +section-request(
+      [
       "Ready to try it?",
       "Let's talk."
-    ]).section--request#section-feedback
-    +modal.js-modal
+      ],
+      0
+    ).section--request#section-feedback
+    +modal.modal--pink.js-modal

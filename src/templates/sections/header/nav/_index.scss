@@ -143,8 +143,9 @@
 
         &:nth-child(3) {
           @include make-spacer('ml', 14, sm);
-          @include make-spacer('ml', 16, md);
-          @include make-spacer('ml', 20, xl);
+          @include make-spacer('ml', 12, md);
+          @include make-spacer('ml', 15, xl);
+          @include make-spacer('ml', 24, xxl);
 
           order: 4;
         }

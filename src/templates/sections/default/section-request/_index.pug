@@ -1,10 +1,13 @@
-mixin section-request(title)
+mixin section-request(title, number)
   section.section&attributes(attributes)
     .container-fluid
       .container.container--gradient
         .grid
           h3.title.js-item-animation
-            each item in title
-              span= item
+            each item, index in title
+              if (index === number)
+                strong= item
+              else
+                span= item
           a(href="./index.html").link.js-item-animation Get back home
           +feedback.js-feedback.js-item-animation
