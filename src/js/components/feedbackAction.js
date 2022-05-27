@@ -29,15 +29,40 @@ const feedbackAction = () => {
   $('.js-feedback').on('submit', function(e) {
     e.preventDefault();
     const items = $(this).find('.js-feedback-item');
+    let fill = false;
 
     items.map(function(index, item) {
 
       if ($(item).find('input, textarea').val().length === 0) {
         $(this).addClass('error')
+        fill = false
+      }
+      else {
+        fill = true
       }
 
       return true
     })
+
+    if (fill) {
+      $.ajax({
+        url: 'https://tereshchenko-id.com/website/mannequin/mail.php',
+        method: 'post',
+        dataType: 'json',
+        data: {
+          "name": $(this).find("[name='name']").children()[0].value,
+          "email": $(this).find("[name='email']").children()[0].value,
+          "phone": $(this).find("[name='phone']").children()[0].value,
+          "company": $(this).find("[name='company']").children()[0].value,
+          "message": $(this).find("[name='message']").children()[0].value,
+        },
+        complete(data) {
+          if(data.readyState === 4) {
+            $('.js-feedback').addClass('feedback--success')
+          }
+        }
+      });
+    }
   })
 }
 

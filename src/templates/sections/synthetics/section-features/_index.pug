@@ -107,5 +107,5 @@ mixin section-features
               each item, index in text
                 .tab__item(class=index === 0 && 'tab__item--active'  data-id=`tab-${index + 1}`).js-tab-item
                   .tab__link
-                    p.tab__id= `${item.id}/`
+                    p.tab__id= `${item.id} /`
                     p.tab__text= item.title

@@ -3,15 +3,15 @@ mixin feedback
     .feedback__placeholder
       h2 Your message has been sent
     .feedback__block
-      +field('text', 'Name', 'Please enter your name').js-feedback-item
+      +field('text', 'Name', 'Please enter your name')(name="name").js-feedback-item
     .feedback__block
-      +field('email', 'Business Email', 'Please business e-mail').js-feedback-item
+      +field('email', 'Business Email', 'Please business e-mail')(name="email").js-feedback-item
     .feedback__block
-      +field('text', 'Phone', 'Please enter your phone number').js-feedback-item
+      +field('text', 'Phone', 'Please enter your phone number')(name="phone").js-feedback-item
     .feedback__block
-      +field('text', 'Company name', 'Please write your company name').js-feedback-item
+      +field('text', 'Company name', 'Please write your company name')(name="company").js-feedback-item
     .feedback__block
-      +textarea('Your message', 'Please enter your message').js-feedback-item
+      +textarea('Your message', 'Please enter your message')(name="message").js-feedback-item
       .feedback__wrapper.js-feedback-wrapper
         .feedback__count.js-feedback-count
           span 0

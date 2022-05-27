@@ -54,8 +54,9 @@
   }
 
   &__placeholder {
-    @include make-spacer('pl', 24);
-    @include make-spacer('pr', 14);
+    @include make-spacer('px', 14);
+    @include make-spacer('pl', 24, xl);
+    @include make-spacer('pr', 14, xl);
 
     display: none;
     position: absolute;

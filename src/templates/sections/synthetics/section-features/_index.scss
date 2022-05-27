@@ -4,7 +4,7 @@
 
     .bullet {
       @include media-breakpoint-up(xl) {
-        top: 240px;
+        top: 140px;
         position: absolute;
       }
     }
@@ -114,16 +114,27 @@
         }
       }
 
-      &__id {
-        @include font-size(24px, 30px);
+      &__id,
+      &__link {
+        @include font-size(16px, 22px);
 
+        @include media-breakpoint-up(sm) {
+          @include font-size(24px, 30px);
+        }
+
+        @include media-breakpoint-up(md) {
+          @include font-size(20px, 26px);
+        }
+      }
+
+      &__id {
         white-space: nowrap;
 
         &--lg {
           display: none;
 
           @include media-breakpoint-up(xl) {
-            @include font-size(70px, 90px);
+            @include font-size(70px);
 
             display: block;
           }
@@ -133,19 +144,13 @@
       }
 
       &__link {
-        @include font-size(16px, 22px);
-
-        @include media-breakpoint-up(sm) {
-          @include font-size(20px, 30px);
-        }
-
         @include media-breakpoint-up(xl) {
           height: 80px;
         }
 
         display: grid;
         position: relative;
-        grid-template-columns: 42px 1fr;
+        grid-template-columns: 30px 1fr;
         column-gap: 20px;
         font-weight: var(--typography-semibold);
       }
@@ -251,11 +256,7 @@
           display: grid;
           grid-template-columns: 120px 490px;
           column-gap: 20px;
-          padding-top: 245px;
-        }
-
-        @include media-breakpoint-up(xl) {
-          padding-top: 330px;
+          padding-top: 240px;
         }
       }
 
@@ -276,9 +277,13 @@
         }
 
         @include media-breakpoint-up(xl) {
-          @include font-size(80px);
+          @include font-size(60px);
 
           display: block;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          @include font-size(70px);
         }
 
         display: none;
@@ -288,18 +293,20 @@
       &__slider {
         @include make-spacer('mx', -3);
         @include make-spacer('mx', auto, xl);
-        @include size(375px, 506px);
+        @include make-spacer('mb', 6, xl);
+
+        @include size(391px, 513px);
 
         @include media-breakpoint-up(sm) {
-          @include size(540px, 746px);
+          @include size(499px, 653px);
         }
 
         @include media-breakpoint-up(xl) {
-          @include size(640px, 840px);
+          @include size(534px, 700px);
         }
 
-        @include media-breakpoint-up(xl) {
-          @include size(760px, 993px);
+        @include media-breakpoint-up(xxl) {
+          @include size(606px, 793px);
         }
 
         position: relative;
@@ -319,7 +326,15 @@
             top: 0;
             right: 0;
             left: 0;
-            transform: translateY(10px);
+            transform: translateY(10px) scale(1.15);
+          }
+
+          @include media-breakpoint-up(xl) {
+            transform: translateY(50px) scale(1.15);
+          }
+
+          @include media-breakpoint-up(xxl) {
+            transform: translateY(60px) scale(1.15);
           }
         }
       }
