@@ -2,6 +2,147 @@
 
   &--sales {
 
+    .popup {
+      @include make-spacer('px', 3, 'xs');
+      @include make-spacer('px', 5, 'md');
+      @include make-spacer('px', 18, 'xl');
+      @include make-spacer('px', 20, 'xxl');
+
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(#B3B3B3, 0.2);
+      z-index: 13;
+
+      &__container {
+        @include make-spacer('mx', auto);
+        @include flex($align-items: center);
+        @include size(100%);
+
+        position: relative;
+        min-width: var(--min-width);
+        max-width: var(--max-width);
+      }
+
+      &__body {
+        @include flex($direction: column);
+        @include size(100%, 467px);
+
+        position: relative;
+        border-radius: var(--default-border-radius);
+        box-shadow: var(--default-box-shadow);
+        background-color: var(--color-white);
+        overflow: hidden;
+
+        @include media-breakpoint-up(sm) {
+          height: 440px;
+        }
+
+        @include media-breakpoint-up(md) {
+          @include size(725px, 485px);
+        }
+
+        @include media-breakpoint-up(xl) {
+          @include size(1012px, 636px);
+        }
+
+        &::after,
+        &::before {
+          @include size(373px, 635px);
+
+          display: none;
+          position: absolute;
+          top: 50%;
+          background-image: url('../img/gradient-2.webp');
+          background-size: cover;
+          background-position: 50% 50%;
+          filter: blur(150px);
+          opacity: 0.15;
+          content: '';
+
+          @include media-breakpoint-up(sm) {
+            display: block;
+          }
+        }
+
+        &::before {
+          left: 0;
+          transform: translateY(-50%) scale(-1);
+        }
+
+        &::after {
+          right: 0;
+          transform: translateY(-50%);
+        }
+      }
+
+      &__close {
+        @include size(28px);
+
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1;
+
+        @include media-breakpoint-up(xxl) {
+          @include size(40px);
+
+          top: 30px;
+          right: 30px;
+        }
+      }
+
+      &__icon {
+        @include size(50px);
+
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include media-breakpoint-up(xxl) {
+          @include size(70px);
+        }
+      }
+
+      &__image {
+        @include flex(center, center);
+
+        .picture {
+          height: 177px;
+
+          @include media-breakpoint-up(sm) {
+            height: 100%;
+          }
+        }
+      }
+
+      &__image,
+      &__title {
+        overflow: hidden;
+        flex: 1;
+      }
+
+      &__title {
+        @include flex(center, center);
+
+        align-self: center;
+        text-align: center;
+        max-width: 514px;
+
+        span {
+          @include make-spacer('mx', 1);
+
+          &:nth-child(1) {
+            color: var(--color-primary);
+          }
+        }
+      }
+    }
+
     .container {
 
       &::before {
@@ -170,6 +311,8 @@
       @include make-spacer('mt', 12, xl);
       @include flex($align-items: center);
 
+      position: relative;
+      z-index: 1;
       color: var(--color-dark);
 
       &__icon {

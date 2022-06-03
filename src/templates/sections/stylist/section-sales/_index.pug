@@ -20,9 +20,26 @@ mixin section-sales
             .grid__column
               p.text.js-item-animation Why sell one item when you could be selling several more and ensuring more satisfaction for your shoppers?
               p.text.js-item-animation Mannequin Stylist plugs directly into your backend to curate completed outfits with the eye of a fashion house vet.
-              a.link.js-item-animation
+              button.link.js-item-animation.js-button-popup
                 span.link__icon
                   svg(viewBox='0 0 69 69' fill='none' xmlns='http://www.w3.org/2000/svg')
                     circle(cx='34.5' cy='34.5' r='33.5' fill='currentColor' stroke='currentColor' stroke-width='2')
                     path(d='M39.3472 35.2071L40.0543 34.5L39.3472 33.7929L32.5873 27.033L30.8802 25.3259L30.8802 27.7401L30.8802 41.2599V43.6741L32.5873 41.967L39.3472 35.2071Z' fill='white' stroke='white' stroke-width='2')
                 span.link__text See Demo
+
+    .popup.js-popup
+      .popup__container
+        .popup__body
+          a.popup__close.js-popup-close
+            svg(viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M19.9998 0C8.93976 0 -0.000244141 8.94 -0.000244141 20C-0.000244141 31.06 8.93976 40 19.9998 40C31.0598 40 39.9998 31.06 39.9998 20C39.9998 8.94 31.0598 0 19.9998 0ZM19.9998 36C11.1798 36 3.99976 28.82 3.99976 20C3.99976 11.18 11.1798 4 19.9998 4C28.8198 4 35.9998 11.18 35.9998 20C35.9998 28.82 28.8198 36 19.9998 36ZM27.1798 10L19.9998 17.18L12.8198 10L9.99976 12.82L17.1798 20L9.99976 27.18L12.8198 30L19.9998 22.82L27.1798 30L29.9998 27.18L22.8198 20L29.9998 12.82L27.1798 10Z' fill='#282828')
+
+          .popup__image
+            +picture('stylist/popup', 'Popup')
+          .popup__icon
+            svg(viewBox='0 0 69 69' fill='none' xmlns='http://www.w3.org/2000/svg')
+              path(d='M38.0451 26.8372L27.4962 18.897V50.103L38.0451 42.1628L48.2481 34.5L38.0451 26.8372ZM38.0451 26.8372L27.4962 18.897V50.103L38.0451 42.1628L48.2481 34.5L38.0451 26.8372ZM38.0451 26.8372L27.4962 18.897V50.103L38.0451 42.1628L48.2481 34.5L38.0451 26.8372ZM30.9549 7.00402V0C24.003 0.693467 17.6737 3.46734 12.5549 7.66281L17.4662 12.6211C21.3743 9.56252 26.0353 7.62152 30.9549 7.00402ZM12.5895 17.51L7.64361 12.5864C3.33694 17.8449 0.677569 24.2628 0 31.0327H6.98647C7.60902 25.9703 9.61504 21.3588 12.5895 17.51ZM6.98647 37.9673H0C0.691729 44.9367 3.45865 51.2819 7.64361 56.4136L12.5895 51.4553C9.53327 47.5536 7.59613 42.8904 6.98647 37.9673ZM12.5549 61.3372C17.8036 65.6489 24.2036 68.3143 30.9549 69V61.996C26.0353 61.3785 21.3743 59.4375 17.4662 56.3789L12.5549 61.3372ZM69 34.5C69 52.3915 55.4421 67.1623 38.0451 69V61.996C51.603 60.193 62.0827 48.5427 62.0827 34.5C62.0827 20.4573 51.603 8.80704 38.0451 7.00402V0C55.4421 1.83769 69 16.6085 69 34.5Z' fill='#E072D2')
+          .popup__title
+            h4.h4
+              span Demo
+              span will be here shortly
