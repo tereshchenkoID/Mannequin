@@ -1,0 +1,11 @@
+mixin section-how-it-work(data, color)
+  section.section&attributes(attributes)
+    .container-fluid
+      .container
+        +category('This is how it works')(class=`category--${color}`).js-item-animation
+        .grid
+          each item, index in data
+            .item.js-item-animation
+              .item__icon
+                +picture(item.img, `Production ${index}`)
+              p.item__text= item.text

@@ -1,0 +1,35 @@
+---
+title: Mannequin
+lang: en
+---
+extends layouts/_layout
+
+block content
+  -
+    var menu = [
+      {
+        text: 'WHERE IT CAN WORK',
+        link: '#section-can-work'
+      },
+      {
+        text: 'PRODUCTION',
+        link: '#section-production'
+      },
+      {
+        text: 'VIRTUAL PRODUCTION',
+        link: '#section-virtual-production'
+      }
+    ]
+
+  +nav(menu, 'production').nav--inner#nav
+  main
+    +section-production#section-production
+    +section-virtual-production#section-virtual-production
+    +section-request(
+      [
+      "Get in touch.",
+      "We are ready to show you the future."
+      ],
+      0
+    ).section--request#section-feedback
+    +modal.modal--pink.js-modal

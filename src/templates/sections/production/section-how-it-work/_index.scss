@@ -1,0 +1,69 @@
+.section {
+
+  &--how-it-work {
+    @include make-spacer('m', 0);
+
+    .container {
+      @include make-spacer('py', 8);
+      @include make-spacer('py', 10, md);
+      @include make-spacer('py', 14, lg);
+
+      border-top: 2px solid var(--color-dark);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 40px;
+      column-gap: 20px;
+
+      @include media-breakpoint-up(sm) {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 50px;
+      }
+
+      @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 40px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        column-gap: 100px;
+      }
+    }
+
+    .item {
+
+      &__icon {
+        @include make-spacer('mx', auto);
+        @include make-spacer('mb', 4);
+        @include make-spacer('mb', 6, sm);
+        @include make-spacer('mb', 8, xl);
+
+        @include size(150px);
+
+        @include media-breakpoint-up(lg) {
+          @include size(200px);
+        }
+
+        @include media-breakpoint-up(xl) {
+          @include size(230px);
+        }
+      }
+
+      &__text {
+        @include make-spacer('mx', auto);
+        @include font-size(14px, 21px);
+
+        @include media-breakpoint-up(lg) {
+          @include font-size(20px, 30px);
+
+          max-width: 230px;
+        }
+
+        max-width: 160px;
+        text-align: center;
+      }
+    }
+  }
+}

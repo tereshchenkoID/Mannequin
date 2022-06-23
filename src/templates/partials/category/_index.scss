@@ -1,0 +1,49 @@
+.category {
+  @include flex($align-items: center);
+  @include make-spacer('mb', 10);
+  @include make-spacer('mb', 14, sm);
+  @include make-spacer('mb', 16, md);
+  @include make-spacer('mb', 18, lg);
+
+  &__icon {
+    @include flex(center, center);
+    @include make-spacer('mr', 4);
+    @include make-spacer('mr', 6, sm);
+    @include make-spacer('mr', 4, lg);
+    @include size(30px);
+
+    border-radius: 50%;
+
+    @include media-breakpoint-up(sm) {
+      @include size(35px);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include size(45px);
+    }
+
+    svg {
+      @include size(25px);
+    }
+  }
+
+  &--pink {
+
+    .category {
+
+      &__icon {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+
+  &--blue {
+
+    .category {
+
+      &__icon {
+        background-color: var(--color-secondary);
+      }
+    }
+  }
+}

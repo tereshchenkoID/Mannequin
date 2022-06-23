@@ -1,0 +1,8 @@
+mixin section-product-header(count, title, text, color)
+  section.section&attributes(attributes)
+    .container-fluid
+      .container
+        .block(class=`block--${color}`).js-item-animation
+          .block__circle= `${count} /`
+          h3.block__title= title
+          p.block__text= text

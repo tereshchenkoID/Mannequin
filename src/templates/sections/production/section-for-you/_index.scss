@@ -1,0 +1,86 @@
+.section {
+
+  &--section-for-you {
+    @include make-spacer('m', 0);
+
+    .container {
+      @include make-spacer('py', 8);
+      @include make-spacer('py', 10, md);
+      @include make-spacer('py', 14, lg);
+
+      border-top: 2px solid var(--color-dark);
+    }
+
+    .grid {
+      display: grid;
+      row-gap: 50px;
+
+      @include media-breakpoint-up(sm) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+      }
+
+      @include media-breakpoint-up(md) {
+        column-gap: 60px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        column-gap: 150px;
+      }
+    }
+
+    .item {
+
+      &__icon {
+        @include size(50px);
+
+        @include media-breakpoint-up(sm) {
+          @include size(60px);
+        }
+
+        @include media-breakpoint-up(lg) {
+          @include size(70px);
+        }
+
+        @include media-breakpoint-up(xl) {
+          @include size(80px);
+        }
+      }
+
+      &__subtitle {
+        @include font-size(20px, 27px);
+
+        font-weight: var(--typography-bold);
+
+        @include media-breakpoint-up(lg) {
+          @include font-size(24px, 31px);
+        }
+      }
+
+      &__divider {
+        @include make-spacer('ml', 0);
+        @include make-spacer('my', 8);
+        @include make-spacer('my', 10, md);
+        @include make-spacer('my', 12, lg);
+        @include size(165px, 1px);
+
+        background-color: var(--color-dark);
+        border: 0;
+
+        @include media-breakpoint-up(md) {
+          width: 235px;
+        }
+      }
+
+      &__text {
+        @include make-spacer('mt', 4);
+        @include make-spacer('mt', 5, md);
+        @include font-size(14px, 20px);
+
+        @include media-breakpoint-up(lg) {
+          @include font-size(20px, 30px);
+        }
+      }
+    }
+  }
+}

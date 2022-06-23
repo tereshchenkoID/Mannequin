@@ -1,0 +1,46 @@
+-
+  var p_hw = [
+    {
+      img: 'production/production/hw-1',
+      text: 'We send you our posable mannequins with different body types'
+    },
+    {
+      img: 'production/production/hw-2',
+      text: 'You dress and pose the mannequins in your photo studio'
+    },
+    {
+      img: 'production/production/hw-3',
+      text: 'You take photos and upload them in our system'
+    },
+    {
+      img: 'production/production/hw-4',
+      text: 'Our AI replaces the mannequin in the picture with a photorealistic digital model'
+    },
+    {
+      img: 'production/production/hw-5',
+      text: 'You get images ready to be used on the cover of a magazine or your website'
+    }
+  ]
+
+-
+  var p_fy = [
+    {
+      img: 'production/production/fy-1',
+      subtitle: 'Cut costs on your existing photoshooting process',
+      text: '(no photographers, stylists, makeup artists, models, or unions)'
+    },
+    {
+      img: 'production/production/fy-2',
+      subtitle: 'Fully automate your catalog building process'
+    },
+    {
+      img: 'production/production/fy-3',
+      subtitle: 'Design not just your brand, but who’s wearing it'
+    }
+  ]
+
+mixin section-production
+  div&attributes(attributes)
+    +section-product-header('01', 'Mannequin Production', 'Is our proprietary state of the art photoshooting stage equipped with industrial grade lights and cameras, utilizing our Mannequin Synthetics technology.', 'pink').section--product-header
+    +section-how-it-work(p_hw, 'pink').section--how-it-work
+    +section-for-you(p_fy, 'pink').section--section-for-you

@@ -1,0 +1,15 @@
+mixin section-for-you(data, color)
+  section.section&attributes(attributes)
+    .container-fluid
+      .container
+        +category('What’s in it for you')(class=`category--${color}`)
+        .grid
+          each item, index in data
+            .item.js-item-animation
+              .item__icon
+                +picture(item.img, `Production ${index}`)
+              hr.item__divider
+              p.item__subtitle= item.subtitle
+
+              if (item.text)
+                p.item__text= item.text

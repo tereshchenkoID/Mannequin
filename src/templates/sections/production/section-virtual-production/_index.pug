@@ -1,0 +1,45 @@
+-
+  var vp_hw = [
+    {
+      img: 'production/virtual-production/hw-1',
+      text: 'You send us your 3D apparel along with instructions'
+    },
+    {
+      img: 'production/virtual-production/hw-2',
+      text: 'We put your apparel on a virtual mannequin and set the proportions, lighting etc as per your specs'
+    },
+    {
+      img: 'production/virtual-production/hw-3',
+      text: 'Take virtual pictures of the mannequin'
+    },
+    {
+      img: 'production/virtual-production/hw-4',
+      text: 'Replace the mannequin with our Synthetic Models'
+    },
+    {
+      img: 'production/virtual-production/hw-5',
+      text: 'You get the runway ready photographs ready to be used on the cover of a magazine or your website'
+    }
+  ]
+
+-
+  var vp_fy = [
+    {
+      img: 'production/virtual-production/fy-1',
+      subtitle: 'Showcase your 3D apparel on digital models that look like your wildest dream'
+    },
+    {
+      img: 'production/virtual-production/fy-2',
+      subtitle: 'Increase conversions into sales thanks to demonstrating your apparel on models'
+    },
+    {
+      img: 'production/virtual-production/fy-3',
+      subtitle: 'Customize your models to complement the look'
+    }
+  ]
+
+mixin section-virtual-production
+  div&attributes(attributes)
+    +section-product-header('02', 'Mannequin Virtual Production', 'Is our proprietary process of converting your 3D Digital Lookbook apparel into runway grade 2D pictures of models wearing your brand. It’s effectively the same process as Mannequin Production but there is no photoshooting involved AT ALL.', 'blue').section--product-header
+    +section-how-it-work(vp_hw, 'blue').section--how-it-work
+    +section-for-you(vp_fy, 'blue').section--section-for-you
