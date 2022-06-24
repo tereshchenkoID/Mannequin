@@ -1,0 +1,29 @@
+mixin section-photo-block
+  section.section&attributes(attributes)
+    .container-fluid
+      .container
+        .block
+          h4.title MANNEQUIN PRODUCTION
+          .description
+            strong.text Storefront ready photos of your apparel on digital models
+            span.text without a single camera shutter
+
+          .pictures
+            .pictures__item
+              +picture('production/header-1', `Header 1`)
+            .pictures__item
+              .circle
+                p.circle__text Production
+                strong.circle__text photoshooting stage
+                .circle__icon
+                  svg(viewBox='0 0 35 35' fill='none' xmlns='http://www.w3.org/2000/svg')
+                    path(d='M17.415 34.8301C7.78555 34.8301 0 27.0445 0 17.415C0 7.78554 7.78555 -1.52588e-05 17.415 -1.52588e-05C27.0445 -1.52588e-05 34.8301 7.78554 34.8301 17.415C34.8301 27.0445 27.0445 34.8301 17.415 34.8301Z' fill='#E072D2')
+                    path(fill-rule='evenodd' clip-rule='evenodd' d='M16 18L16 29H18V18L29 18V16L18 16V4.99998H16V16L5 16V18L16 18Z' fill='#282828')
+                strong 3D mannequin &
+                strong 3D apparel in clo3d
+            .pictures__item
+              +picture('production/header-3', `Header 3`)
+            .pictures__item
+              +picture('production/header-4', `Header 4`)
+
+          +icon(2).icon--sm.icon--pink

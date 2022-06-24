@@ -1,0 +1,189 @@
+.section {
+
+  &--photo-block {
+
+    .container {
+      @include make-spacer('py', 6);
+      @include make-spacer('px', 4);
+
+      @include make-spacer('pt', 12, sm);
+      @include make-spacer('pb', 8, sm);
+      @include make-spacer('px', 6, sm);
+
+      @include make-spacer('pt', 16, md);
+      @include make-spacer('pb', 10, md);
+      @include make-spacer('px', 14, md);
+
+      @include make-spacer('pb', 10, xl);
+      @include make-spacer('px', 20, xl);
+
+      @include make-spacer('pt', 18, xxl);
+
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      border-radius: var(--default-border-radius);
+      background-color: var(--color-white);
+      text-align: center;
+    }
+
+    .title {
+      text-transform: uppercase;
+      font-weight: var(--typography-semibold);
+    }
+
+    .description {
+      @include make-spacer('mt', 4);
+      @include make-spacer('mt', 6, sm);
+      @include make-spacer('mb', 6);
+      @include make-spacer('mb', 8, sm);
+      @include make-spacer('mb', 12, md);
+      @include make-spacer('mb', 10, xl);
+      @include make-spacer('mb', 15, xxl);
+      @include make-spacer('mx', auto);
+      @include font-size(16px, 24px);
+
+      max-width: 480px;
+
+      @include media-breakpoint-up(sm) {
+        @include font-size(20px, 30px);
+      }
+
+      @include media-breakpoint-up(md) {
+        max-width: 635px;
+      }
+
+      strong,
+      span {
+        margin: 0 3px;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+      }
+    }
+
+    .icon {
+      position: absolute;
+      opacity: 0;
+
+      @include media-breakpoint-up(sm) {
+        opacity: 1;
+        left: 30px;
+        bottom: 40px;
+      }
+
+      @include media-breakpoint-up(md) {
+        bottom: 50px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        left: 50px;
+        bottom: 50px;
+      }
+    }
+
+    .pictures {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(2, 144px);
+      grid-template-rows: repeat(2, 144px);
+
+      @include media-breakpoint-up(sm) {
+        grid-template-columns: repeat(2, 214px);
+        grid-template-rows: repeat(2, 214px);
+      }
+
+      @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(4, 214px);
+        grid-template-rows: unset;
+      }
+
+      @include media-breakpoint-up(xl) {
+        grid-template-columns: repeat(4, 271px);
+      }
+
+      &__item {
+        @include size(156px);
+
+        position: relative;
+        z-index: 0;
+
+        @include media-breakpoint-up(sm) {
+          @include size(225px);
+        }
+
+        @include media-breakpoint-up(xl) {
+          @include size(287px);
+        }
+
+        &:nth-child(2) {
+
+          @include media-breakpoint-up(md) {
+            z-index: 2;
+          }
+        }
+
+        &:nth-child(3) {
+          z-index: 1;
+
+          .picture {
+            @include size(156px, 175px);
+
+            transform: translateY(-20px);
+
+            @include media-breakpoint-up(sm) {
+              @include size(225px, 250px);
+
+              transform: translateY(-25px);
+            }
+
+            @include media-breakpoint-up(xl) {
+              @include size(287px, 320px);
+
+              transform: translateY(-35px);
+            }
+          }
+        }
+
+        &:nth-child(4) {
+          z-index: 1;
+
+          @include media-breakpoint-up(sm) {
+            z-index: 0;
+          }
+        }
+      }
+    }
+
+    .circle {
+      @include size(100%);
+      @include flex(center, center, column);
+      @include font-size(11px, 13px);
+
+      background-color: var(--color-dark);
+      border-radius: 50%;
+      color: var(--color-white);
+
+      @include media-breakpoint-up(sm) {
+        @include font-size(15px, 20px);
+      }
+
+      @include media-breakpoint-up(xl) {
+        @include font-size(20px, 25px);
+      }
+
+      &__icon {
+        @include make-spacer('my', 2);
+        @include make-spacer('my', 4, sm);
+        @include size(19px);
+
+        @include media-breakpoint-up(sm) {
+          @include size(27px);
+        }
+
+        @include media-breakpoint-up(xl) {
+          @include size(34px);
+        }
+      }
+    }
+  }
+}
