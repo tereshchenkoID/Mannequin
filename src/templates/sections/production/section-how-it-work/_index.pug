@@ -7,5 +7,5 @@ mixin section-how-it-work(data, color)
           each item, index in data
             .item.js-item-animation
               .item__icon
-                +picture(item.img, `Production ${index}`)
+                +picture(item.img, `Production ${index}`).js-item-animation
               p.item__text= item.text

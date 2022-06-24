@@ -1,0 +1,93 @@
+.section {
+
+  &--our-solution {
+
+    .status {
+      @include make-spacer('ml', 20);
+      @include make-spacer('ml', auto, sm);
+      @include make-spacer('mr', 0, sm);
+
+      @include make-spacer('mb', 4);
+      @include make-spacer('mb', 8, sm);
+      @include make-spacer('mb', 12, md);
+      @include make-spacer('mb', 16, lg);
+      @include make-spacer('mb', 20, xxl);
+
+      @include size(174px, 23px);
+
+      @include media-breakpoint-up(sm) {
+        @include size(244px, 33px);
+      }
+
+      @include media-breakpoint-up(md) {
+        @include size(317px, 43px);
+      }
+
+      @include media-breakpoint-up(xl) {
+        @include size(423px, 57px);
+      }
+    }
+
+    .grid {
+      display: grid;
+      row-gap: 30px;
+
+      @include media-breakpoint-up(sm) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 23px;
+      }
+
+      @include media-breakpoint-up(md) {
+        column-gap: 60px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        column-gap: 107px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        column-gap: 190px;
+      }
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      align-items: center;
+      column-gap: 20px;
+
+      @include media-breakpoint-up(sm) {
+        grid-template-columns: 100px 1fr;
+      }
+
+      @include media-breakpoint-up(md) {
+        column-gap: 40px;
+        grid-template-columns: 120px 1fr;
+      }
+
+      @include media-breakpoint-up(lg) {
+        grid-template-columns: 150px 1fr;
+      }
+
+      &__text {
+        @include font-size(16px, 25px);
+
+        @include media-breakpoint-up(sm) {
+          @include font-size(20px, 30px);
+        }
+
+        @include media-breakpoint-up(md) {
+          @include font-size(25px, 35px);
+        }
+
+        @include media-breakpoint-up(lg) {
+          @include font-size(30px, 40px);
+        }
+
+        @include media-breakpoint-up(xxl) {
+          @include font-size(35px, 45px);
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@ mixin section-for-you(data, color)
   section.section&attributes(attributes)
     .container-fluid
       .container
-        +category('What’s in it for you')(class=`category--${color}`)
+        +category('What’s in it for you')(class=`category--${color}`).js-item-animation
         .grid
           each item, index in data
             .item.js-item-animation

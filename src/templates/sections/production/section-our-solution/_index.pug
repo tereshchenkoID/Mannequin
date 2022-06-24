@@ -1,0 +1,17 @@
+mixin section-our-solution
+  section.section&attributes(attributes)
+    .container-fluid
+      .container
+        .block
+          .status.js-item-animation
+            img(src="./img/solution.webp").img
+
+          .grid
+            .item.js-item-animation
+              .item__picture
+                +picture('production/solution-1', 'Solution 1')
+              p.item__text Still putting yourself through painstaking photoshoots?
+            .item.js-item-animation
+              .item__picture
+                +picture('production/solution-2', 'Solution 2')
+              p.item__text Showcasing your apparel in 3D instead of placing it on a model?

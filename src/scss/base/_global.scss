@@ -52,7 +52,8 @@ p {
   overflow: hidden;
 }
 
-.section {
+.section,
+.container-additional {
   @include make-spacer('mb', 20);
   @include make-spacer('mb', 24, md);
   @include make-spacer('mb', 26, xl);
