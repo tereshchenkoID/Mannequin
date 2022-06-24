@@ -39,7 +39,11 @@
     .bullet {
 
       &__icon {
-        @include size(45px);
+        @include size(35px);
+
+        @include media-breakpoint-up(xl) {
+          @include size(45px);
+        }
       }
     }
   }

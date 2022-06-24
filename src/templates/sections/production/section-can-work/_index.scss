@@ -3,9 +3,9 @@
   &--can-work {
 
     .title {
-      @include make-spacer('mb', 4);
-      @include make-spacer('mb', 5, sm);
-      @include make-spacer('mb', 10, md);
+      @include make-spacer('mb', 8);
+      @include make-spacer('mb', 14, sm);
+      @include make-spacer('mb', 20, xl);
 
       span {
         @include make-spacer('mr', 2);
@@ -81,98 +81,122 @@
 
 
     .product {
-      @include font-size(12px, 16px);
+      @include make-spacer('mb', 10);
+      @include make-spacer('mb', 12, sm);
+      @include make-spacer('mb', 15, lg);
+
+      @include make-spacer('ml', 2);
+      @include make-spacer('ml', 12, sm);
 
       position: relative;
-      padding-left: 82px;
-      width: 1050px;
+      display: grid;
+      max-width: 350px;
+      width: fit-content;
+
+      &:nth-child(3) {
+        @include make-spacer('mr', 0, md);
+        @include make-spacer('ml', auto, md);
+      }
+
+      @include media-breakpoint-up(sm) {
+        grid-template-columns: 405px 355px;
+        max-width: 100%;
+      }
+
+      @include media-breakpoint-up(xl) {
+        grid-template-columns: 520px 455px;
+      }
 
       .bullet {
         @include make-spacer('m', 0);
       }
 
-      &__circle,
-      &__content {
-        position: absolute;
-      }
-
       &__circle {
+        position: absolute;
         top: 65px;
+        left: -11px;
+
+        @include media-breakpoint-up(sm) {
+          left: 0;
+          transform: translateX(-50%);
+        }
       }
 
       &__content {
-        top: 0;
-        bottom: 0;
-        left: 495px;
+        position: relative;
+
+        @include media-breakpoint-up(sm) {
+          transform: translateX(-70px);
+        }
+      }
+
+      &__title,
+      &__text {
+        @include make-spacer('mb', 6, sm);
       }
 
       &__title {
-        @include make-spacer('mt', 3);
         @include make-spacer('mb', 2);
-
+        @include make-spacer('mt', 3);
         @include make-spacer('mt', 4, sm);
-        @include make-spacer('mb', 6, sm);
 
         text-transform: uppercase;
         font-weight: var(--typography-semibold);
       }
 
       &__link {
+        @include font-size(10px, 12px);
+
         display: grid;
-        position: absolute;
-        bottom: 0;
-        left: 50px;
-        grid-template-columns: repeat(2, 60px);
+        grid-template-columns: repeat(2, 45px);
         column-gap: 22px;
         align-items: center;
+
+        @include media-breakpoint-up(sm) {
+          position: absolute;
+          bottom: 0;
+          left: 30px;
+        }
+
+        @include media-breakpoint-up(xl) {
+          @include font-size(12px, 16px);
+
+          grid-template-columns: repeat(2, 60px);
+        }
+      }
+
+      &__icon {
+        @include size(45px);
+
+        @include media-breakpoint-up(xl) {
+          @include size(60px);
+        }
+      }
+
+      &__text {
+        @include make-spacer('mb', 4);
+        @include font-size(14px);
+
+        @include media-breakpoint-up(sm) {
+          @include font-size(16px, 24px);
+        }
+
+        @include media-breakpoint-up(xl) {
+          @include font-size(20px, 30px);
+        }
       }
 
       &__image {
-        @include size(520px);
+        @include size(350px, 100%);
 
-        border: 1px solid red;
+        @include media-breakpoint-up(sm) {
+          width: 405px;
+        }
+
+        @include media-breakpoint-up(xl) {
+          width: 520px;
+        }
       }
     }
-
-
-
-
-
-    //.text {
-    //  @include make-spacer('ml', auto, md);
-    //  @include make-spacer('mr', 0, md);
-    //
-    //  @include media-breakpoint-up(md) {
-    //    max-width: 430px;
-    //  }
-    //}
-    //
-    //.image {
-    //  @include make-spacer('mt', 4);
-    //  @include make-spacer('mx', auto);
-    //
-    //  @include make-spacer('mt', 0, sm);
-    //  @include make-spacer('mr', 0, sm);
-    //  @include make-spacer('ml', auto, sm);
-    //  @include size(430px, 460px);
-    //
-    //  @include media-breakpoint-up(sm) {
-    //    @include size(530px, 568px);
-    //
-    //    transform: translateX(-90px);
-    //  }
-    //
-    //  @include media-breakpoint-up(md) {
-    //    @include size(630px, 675px);
-    //
-    //    transform: translateX(-125px);
-    //  }
-    //
-    //  @include media-breakpoint-up(xl) {
-    //    @include size(730px, 780px);
-    //
-    //    transform: translateX(0);
-    //  }
-    //}
   }
 }
