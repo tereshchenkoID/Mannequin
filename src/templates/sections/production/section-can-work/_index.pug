@@ -1,0 +1,32 @@
+mixin section-can-work
+  section.section&attributes(attributes)
+    .container-fluid
+      .container
+        .block
+          +bullet(4, 'where it can work').js-item-animation
+          h2.title.js-item-animation
+            span Mannequin has
+            span two core products
+
+        .product.js-item-animation
+          .product__circle
+            .circle.circle--pink
+              p.circle__text 01
+              p.circle__divider /
+              .circle__icon
+                svg(viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(d='M12.8314 24.1839C6.25128 24.1839 0.931152 18.8637 0.931152 12.2836C0.931152 5.70343 6.25128 0.383301 12.8314 0.383301C19.4116 0.383301 24.7317 5.70343 24.7317 12.2836C24.7317 18.8637 19.4116 24.1839 12.8314 24.1839Z' fill='#E072D2')
+                  path(fill-rule='evenodd' clip-rule='evenodd' d='M11.6416 18.0943L12.6216 19.0743L19.4118 12.2842L12.6216 5.49402L11.6416 6.47404L16.7521 11.5845H6.53125V12.9846H16.7513L11.6416 18.0943Z' fill='#282828')
+          .product__image
+
+          .product__content
+            .product__bullet
+              +bullet(6).bullet--lg.bullet--pink
+            h4.product__title Mannequin Production
+            p.product__text for brands doing classic product photoshoots.
+            .product__link
+              span.product__icon
+                svg(width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  circle(cx='30' cy='30' r='29' stroke='#282828' stroke-width='2')
+                  path(d='M24.6326 31.2751L23.3016 30.6592L23.9792 31.9599L29.8592 43.2474L30.3026 44.0986L30.7461 43.2474L36.6261 31.9599L37.3036 30.6592L35.9726 31.2751L31.8482 33.1838L33.4767 19.2921L33.5422 18.7339L32.9801 18.7339L27.6251 18.7339L27.0631 18.7339L27.1285 19.2921L28.757 33.1838L24.6326 31.2751Z' fill='#F4F4F4' stroke='#282828')
+              p.product__text read about it below
