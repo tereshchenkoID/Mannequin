@@ -7,6 +7,7 @@
 
   &__icon {
     @include flex(center, center);
+    @include make-spacer('p', 1);
     @include make-spacer('mr', 4);
     @include make-spacer('mr', 6, sm);
     @include make-spacer('mr', 4, lg);

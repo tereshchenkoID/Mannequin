@@ -23,6 +23,64 @@
       border-radius: var(--default-border-radius);
       background-color: var(--color-white);
       text-align: center;
+
+      &::after {
+        @include size(1053px, 766px);
+
+        left: -618px;
+        top: -740px;
+
+        @include media-breakpoint-up(sm) {
+          @include size(1387px, 1008px);
+
+          left: -590px;
+          top: -920px;
+        }
+
+        @include media-breakpoint-up(md) {
+          left: -490px;
+        }
+
+        @include media-breakpoint-up(xl) {
+          left: -350px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          top: -930px;
+        }
+      }
+
+      &::before {
+        top: 0;
+        bottom: 0;
+        right: 30px;
+        width: 215px;
+
+        @include media-breakpoint-up(sm) {
+          right: 60px;
+          width: 460px;
+        }
+
+        @include media-breakpoint-up(md) {
+          right: 82px;
+          width: 612px;
+        }
+
+        @include media-breakpoint-up(xl) {
+          right: 108px;
+          width: 790px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          right: 129px;
+          width: 956px;
+        }
+      }
+    }
+
+    .block {
+      position: relative;
+      z-index: 1;
     }
 
     .title {

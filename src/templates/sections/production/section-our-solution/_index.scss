@@ -2,6 +2,32 @@
 
   &--our-solution {
 
+    .container {
+
+      &::before {
+        @include size(1567px, 1070px);
+
+        top: -100px;
+        right: -1300px;
+
+        @include media-breakpoint-up(sm) {
+          right: -905px;
+        }
+
+        @include media-breakpoint-up(md) {
+          top: -150px;
+          right: -1040px;
+        }
+
+        @include media-breakpoint-up(xl) {
+          @include size(1978px, 1350px);
+
+          top: 100px;
+          right: -1288px;
+        }
+      }
+    }
+
     .status {
       @include make-spacer('ml', 21);
       @include make-spacer('ml', auto, sm);

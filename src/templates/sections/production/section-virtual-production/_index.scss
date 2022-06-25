@@ -1,0 +1,46 @@
+.section {
+
+  &--virual-production {
+
+    &::before {
+      @include size(768px, 524px);
+
+      position: absolute;
+      background-image: url('../img/gradient-2.webp');
+      background-size: cover;
+      background-position: 50% 50%;
+      filter: blur(150px);
+      opacity: 0.15;
+      content: '';
+    }
+
+    &::before {
+      top: 500px;
+
+      @include media-breakpoint-up(sm) {
+        @include size(1146px, 595px);
+
+        top: 0;
+        left: -20px;
+      }
+
+      @include media-breakpoint-up(md) {
+        top: 380px;
+        right: -420px;
+        left: auto;
+      }
+
+      @include media-breakpoint-up(xl) {
+        @include size(1377px, 716px);
+
+        top: 700px;
+        right: -540px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        top: 580px;
+        right: -255px;
+      }
+    }
+  }
+}

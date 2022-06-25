@@ -89,6 +89,7 @@ p {
         background-position: 50% 50%;
         filter: blur(150px);
         opacity: 0.15;
+        z-index: -1;
         content: '';
       }
   }

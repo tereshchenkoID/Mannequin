@@ -2,6 +2,37 @@
 
   &--description {
 
+    .container {
+
+      &::before {
+        @include size(870px, 635px);
+
+        top: -800px;
+        left: -640px;
+
+        @include media-breakpoint-up(sm) {
+          @include size(2370px, 1620px);
+
+          top: 100px;
+          left: -350px;
+          transform: rotateZ(-126deg) scaleY(-1);
+        }
+
+        @include media-breakpoint-up(md) {
+          opacity: 0;
+        }
+
+        @include media-breakpoint-up(xl) {
+          @include size(1052px, 720px);
+
+          opacity: 0.15;
+          top: -550px;
+          left: -700px;
+          transform: rotateZ(40deg)
+        }
+      }
+    }
+
     .grid {
       align-items: center;
 

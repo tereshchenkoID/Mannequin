@@ -1,14 +1,14 @@
 mixin section-can-work
   section.section&attributes(attributes)
     .container-fluid
-      .container
+      .container.container--gradient
         .block
           +bullet(4, 'where it can work').js-item-animation
           h2.title.js-item-animation
             span Mannequin has
             span two core products
 
-        .product.js-item-animation
+        .product.product--pink.js-item-animation
           .product__circle
             .circle.circle--pink
               p.circle__text 01
@@ -25,7 +25,7 @@ mixin section-can-work
               +bullet(6).bullet--lg.bullet--pink
             h4.product__title Mannequin Production
             p.product__text for brands doing classic product photoshoots.
-            .product__link
+            a(href="#section-production").product__link
               span.product__icon
                 svg(viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg')
                   circle(cx='30' cy='30' r='29' stroke='#282828' stroke-width='2')
@@ -33,7 +33,7 @@ mixin section-can-work
               p read about it below
 
 
-        .product.js-item-animation
+        .product.product--blue.js-item-animation
           .product__circle
             .circle.circle--blue
               p.circle__text 02
@@ -50,7 +50,7 @@ mixin section-can-work
               +bullet(6).bullet--lg
             h4.product__title Mannequin Virtual Production
             p.product__text for brands showcasing their apparel in 3D lookbooks but lacking it shown on models.
-            .product__link
+            a(href="#section-virtual-production").product__link
               span.product__icon
                 svg(viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg')
                   circle(cx='30' cy='30' r='29' stroke='#282828' stroke-width='2')
